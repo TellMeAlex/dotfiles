@@ -10,16 +10,16 @@ echo_info "Installing snap pkgs..."
 sudo apt install snapd
 
 PKGS=(
-  breaktimer # Manage periodic breaks. Avoid eye-strain and RSI.
-  colorpicker-app # A mininal but complete Colorpicker desktop app
+  # breaktimer # Manage periodic breaks. Avoid eye-strain and RSI.
+  # colorpicker-app # A mininal but complete Colorpicker desktop app
   taskbook # Tasks, boards & notes for the command-line habitat.
   insomnia # Insomnia REST Client
   fkill # Fabulously kill processes. Cross-platform.
-  mutt # Mutt is a sophisticated text-based Mail User Agent.
-  youtube-dl # Download videos from youtube.com or other video platforms.
+  # mutt # Mutt is a sophisticated text-based Mail User Agent.
+  # youtube-dl # Download videos from youtube.com or other video platforms.
   gitkraken # For repo management, in-app code editing & issue tracking.
   docker # Docker container runtime.
-  robo3t-snap # Robo 3T (formerly Robomongo) is the free lightweight GUI for MongoDB enthusiasts.
+  # robo3t-snap # Robo 3T (formerly Robomongo) is the free lightweight GUI for MongoDB enthusiasts.
 )
 
 for pkg in "${PKGS[@]}"; do
@@ -35,9 +35,9 @@ done
 CLASSIC_PKGS=(
   cool-retro-term # cool-retro-term is a terminal emulator.
   code # Visual Studio Code. Code editing. Redefined.
-  hollywood # fill your console with Hollywood melodrama technobabble.
+  # hollywood # fill your console with Hollywood melodrama technobabble.
   heroku # CLI client for Heroku.
-  datagrip # IntelliJ-based IDE for databases and SQL
+  # datagrip # IntelliJ-based IDE for databases and SQL
 )
 
 for pkg in "${CLASSIC_PKGS[@]}"; do

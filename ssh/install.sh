@@ -1,7 +1,7 @@
 #!/bin/bash
 
-personal_email="pikaatic@gmail.com"
-work_email="mahendra.choudhary@egovernments.org"
+personal_email="llamamealex@gmail.com"
+work_email="alejandro.delafuente@petroprix.com"
 
 # shellcheck source=distro.sh
 . ../distro.sh
