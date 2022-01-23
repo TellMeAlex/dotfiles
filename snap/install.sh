@@ -33,10 +33,10 @@ for pkg in "${PKGS[@]}"; do
 done
 
 CLASSIC_PKGS=(
-  cool-retro-term # cool-retro-term is a terminal emulator.
+  # cool-retro-term # cool-retro-term is a terminal emulator.
   code # Visual Studio Code. Code editing. Redefined.
   # hollywood # fill your console with Hollywood melodrama technobabble.
-  heroku # CLI client for Heroku.
+  # heroku # CLI client for Heroku.
   # datagrip # IntelliJ-based IDE for databases and SQL
 )
 
