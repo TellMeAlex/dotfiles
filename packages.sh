@@ -35,5 +35,4 @@ export PKG=(
   hub
   uget
   mpv
-  torbrowser-launcher
 )

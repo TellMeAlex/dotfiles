@@ -1,7 +1,7 @@
 #!/bin/bash
 
-name="Mahendra Choudhary"
-email="pikaatic@gmail.com"
+name="Alejandro de la Fuente"
+email="alejandro.delafuente@petroprix.com"
 
 # shellcheck source=distro.sh
 . ../distro.sh
