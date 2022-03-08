@@ -145,6 +145,7 @@ alias tb="taskbook"
 # https://medium.com/better-programming/persistent-databases-using-dockers-volumes-and-mongodb-9ac284c25b39
 alias mongo="sudo docker run --name mongodb -v /data/mongodb -d -p 27017:27017 mongo; dc start mongodb"
 alias redis="sudo docker run --name redisdb -v /data/redisdb -d -p 6379:6379 redis; dc start redisdb"
+alias nk="docker run -it -e NGROK_AUTHTOKEN=25sLr0dlbbQQ3ib4HN3E6bNaRQo_7tncJFRm2QZqZYPkmaM34 ngrok/ngrok http 3000"
 
 alias lst="lite-server"
 
