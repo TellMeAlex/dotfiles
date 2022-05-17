@@ -14,8 +14,6 @@ alias mkc="make clean"
 alias mkr="make run"
 alias mkt="make test"
 
-# terminal rickroll 🕺💃
-alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias t="touch"
 
 alias v=vim
@@ -41,7 +39,7 @@ alias ve="virtualenv"
 alias l='exa --color=always --group-directories-first'      # some files and dirs
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -1 --color=always --group-directories-first'  # long format
-alias ls='exa -a1 --color=always --group-directories-first' # my preferred listing
+alias ls='exa -alh --color=always --group-directories-first' # my preferred listing
 
 alias cp="cp -i" # confirm before overwriting something
 alias df='df -h' # human-readable sizes
@@ -125,7 +123,7 @@ alias s="scrot"
 
 # Youtube DL
 alias ydl="youtube-dl"
-alias ydlb="youtube-dl -f bestvideo+bestaudio"
+alias ydrlb="youtube-dl -f bestvideo+bestaudio"
 alias ydlbd="youtube-dl -f bestvideo+bestaudio -ci --batch-file=download.txt"
 alias ydd="youtube-dl -f bestvideo+bestaudio -ci --batch-file=download.txt"
 alias ydla="youtube-dl -cio '0%(autonumber)s %(title)s.%(ext)s' -f bestvideo+bestaudio -ci --batch-file=download.txt ; rename 's/000//g' *"
@@ -155,3 +153,4 @@ alias noi="sudo -g no-internet"
 
 # open spotify with no internet
 alias s="sudo -g no-internet spotify"
+alias afk="keep-presence -c -p 10 -s 30 -m both"

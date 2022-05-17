@@ -11,6 +11,7 @@ sudo apt install snapd
 
 PKGS=(
   # breaktimer # Manage periodic breaks. Avoid eye-strain and RSI.
+  keep-presence # Keep your computer on.
   # colorpicker-app # A mininal but complete Colorpicker desktop app
   taskbook # Tasks, boards & notes for the command-line habitat.
   insomnia # Insomnia REST Client
