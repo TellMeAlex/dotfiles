@@ -14,8 +14,6 @@ alias mkc="make clean"
 alias mkr="make run"
 alias mkt="make test"
 
-# terminal rickroll 🕺💃
-alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias t="touch"
 
 alias v=vim
@@ -41,7 +39,7 @@ alias ve="virtualenv"
 alias l='exa --color=always --group-directories-first'      # some files and dirs
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -1 --color=always --group-directories-first'  # long format
-alias ls='exa -a1 --color=always --group-directories-first' # my preferred listing
+alias ls='exa -alh --color=always --group-directories-first' # my preferred listing
 
 alias cp="cp -i" # confirm before overwriting something
 alias df='df -h' # human-readable sizes
@@ -125,7 +123,7 @@ alias s="scrot"
 
 # Youtube DL
 alias ydl="youtube-dl"
-alias ydlb="youtube-dl -f bestvideo+bestaudio"
+alias ydrlb="youtube-dl -f bestvideo+bestaudio"
 alias ydlbd="youtube-dl -f bestvideo+bestaudio -ci --batch-file=download.txt"
 alias ydd="youtube-dl -f bestvideo+bestaudio -ci --batch-file=download.txt"
 alias ydla="youtube-dl -cio '0%(autonumber)s %(title)s.%(ext)s' -f bestvideo+bestaudio -ci --batch-file=download.txt ; rename 's/000//g' *"
@@ -145,6 +143,7 @@ alias tb="taskbook"
 # https://medium.com/better-programming/persistent-databases-using-dockers-volumes-and-mongodb-9ac284c25b39
 alias mongo="sudo docker run --name mongodb -v /data/mongodb -d -p 27017:27017 mongo; dc start mongodb"
 alias redis="sudo docker run --name redisdb -v /data/redisdb -d -p 6379:6379 redis; dc start redisdb"
+alias nk="docker run -it -e NGROK_AUTHTOKEN=25sLr0dlbbQQ3ib4HN3E6bNaRQo_7tncJFRm2QZqZYPkmaM34 ngrok/ngrok http 3000"
 
 alias lst="lite-server"
 
@@ -154,3 +153,4 @@ alias noi="sudo -g no-internet"
 
 # open spotify with no internet
 alias s="sudo -g no-internet spotify"
+alias afk="keep-presence -c -p 10 -s 30 -m both"
