@@ -10,7 +10,7 @@ echo_info "Installing variety..."
 sudo apt install variety
 
 echo_info "Installing wallpapers..."
-git clone https://github.com/iampika/wallpapers ${HOME}/.wallpapers
+git clone https://github.com/Tellmealex/wallpapers ${HOME}/.wallpapers
 
 echo_info "copy variety..."
 sudo cp -a variety  ${HOME}/.config
