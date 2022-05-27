@@ -15,7 +15,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/nvm
   zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/copyfile
-  zgen oh-my-zsh plugins/copydir
+  zgen oh-my-zsh plugins/copypath
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
   zgen load djui/alias-tips
@@ -51,13 +51,13 @@ SPACESHIP_PROMPT_ORDER=(
   # rust      # Rust section
   # haskell   # Haskell Stack section
   # julia     # Julia section
-  # docker    # Docker section
+  docker    # Docker section
   # aws       # Amazon Web Services section
   # venv      # virtualenv section
   # conda     # conda virtualenv section
   # pyenv     # Pyenv section
   # dotnet    # .NET section
-  # ember     # Ember.js section
+  ember     # Ember.js section
   # kubectl   # Kubectl context section
   # terraform # Terraform workspace section
   # exec_time # Execution time
