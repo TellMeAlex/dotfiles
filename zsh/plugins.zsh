@@ -57,7 +57,7 @@ SPACESHIP_PROMPT_ORDER=(
   # conda     # conda virtualenv section
   # pyenv     # Pyenv section
   # dotnet    # .NET section
-  ember     # Ember.js section
+  # ember     # Ember.js section
   # kubectl   # Kubectl context section
   # terraform # Terraform workspace section
   # exec_time # Execution time

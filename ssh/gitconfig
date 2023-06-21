@@ -1,6 +1,6 @@
 [user]
 	name = Alejandro de la Fuente de la Rosa
-	email = Alejandro.delafuente@petroprix.com
+	email = alejandrodlfdlr@ext.inditex.com
 [includeIf "gitdir:~/work/"]
     path = ~/work/.gitconfig
 [filter "lfs"]
