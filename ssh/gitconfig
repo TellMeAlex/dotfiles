@@ -1,5 +1,10 @@
 [user]
-    name = Alejandro de la Fuente  
-	email = alejandro.delafuente@petroprix.com
+	name = Alejandro de la Fuente de la Rosa
+	email = alejandrodlfdlr@ext.inditex.com
 [includeIf "gitdir:~/work/"]
     path = ~/work/.gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

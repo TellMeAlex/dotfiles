@@ -11,15 +11,17 @@ sudo apt install snapd
 
 PKGS=(
   # breaktimer # Manage periodic breaks. Avoid eye-strain and RSI.
-    keep-presence # Keep your computer on.
+  # keep-presence # Keep your computer on.
   # colorpicker-app # A mininal but complete Colorpicker desktop app
-  gnome-boxes # Virtual machine manager
+  # gnome-boxes # Virtual machine manager
   taskbook # Tasks, boards & notes for the command-line habitat.
   insomnia # Insomnia REST Client
   fkill # Fabulously kill processes. Cross-platform.
   # mutt # Mutt is a sophisticated text-based Mail User Agent.
   # youtube-dl # Download videos from youtube.com or other video platforms.
-  docker # Docker container runtime.
+  thunderbird # Thunderbird is a free and open-source web browser.
+  # storage-explorer # Storage Explorer is a graphical file manager on azure service for Linux.
+  # docker # Docker container runtime.
   # robo3t-snap # Robo 3T (formerly Robomongo) is the free lightweight GUI for MongoDB enthusiasts.
 )
 
