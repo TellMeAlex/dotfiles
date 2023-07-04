@@ -12,7 +12,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/command-not-found
   zgen oh-my-zsh plugins/fasd
   zgen oh-my-zsh plugins/yarn
-  zgen oh-my-zsh plugins/nvm
+  zgen oh-my-zsh plugins/asdf
   zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/copyfile
   zgen oh-my-zsh plugins/copypath
@@ -57,7 +57,7 @@ SPACESHIP_PROMPT_ORDER=(
   # conda     # conda virtualenv section
   # pyenv     # Pyenv section
   # dotnet    # .NET section
-  ember     # Ember.js section
+  # ember     # Ember.js section
   # kubectl   # Kubectl context section
   # terraform # Terraform workspace section
   exec_time # Execution time

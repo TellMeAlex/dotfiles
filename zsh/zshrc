@@ -76,6 +76,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+export ASDF_DIR="$HOME/.asdf"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+source ${ASDF_DIR}/plugins/ivm-node/util/ivm_environment_manager.sh
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd ivm_setup_environment
+
+export TOOLVER_DP_TOKEN="<TOKEN>"
 export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
