@@ -111,8 +111,6 @@ alias git="hub"
 alias gs="git status"
 alias agi="add-gitignore"
 
-# Heroku
-alias gphm="git push heroku master"
 
 # Yarn
 alias ys="yarn server"
@@ -121,29 +119,20 @@ alias yrw="yarn run watch"
 # Scrot
 alias s="scrot"
 
-# Youtube DL
-alias ydl="youtube-dl"
-alias ydrlb="youtube-dl -f bestvideo+bestaudio"
-alias ydlbd="youtube-dl -f bestvideo+bestaudio -ci --batch-file=download.txt"
-alias ydd="youtube-dl -f bestvideo+bestaudio -ci --batch-file=download.txt"
-alias ydla="youtube-dl -cio '0%(autonumber)s %(title)s.%(ext)s' -f bestvideo+bestaudio -ci --batch-file=download.txt ; rename 's/000//g' *"
-alias ydlas="youtube-dl -cio '0%(autonumber)s %(title)s.%(ext)s' -f bestvideo+bestaudio -ci --write-auto-sub --batch-file=download.txt ; rename 's/000//g' *"
 
 alias pg="sudo -i -u postgres"
 alias createdb="sudo -i -u postgres createdb"
 alias dropdb="sudo -i -u postgres dropdb"
 alias psql="sudo -i -u postgres psql"
 
-alias todo="vim ~/.todo.txt"
-alias project="vim ~/.project.txt"
-alias notes="vim ~/.notes.txt"
+alias todo="code ~/.todo.txt"
+alias notes="code ~/.notes.txt"
 
 alias tb="taskbook"
 
 # https://medium.com/better-programming/persistent-databases-using-dockers-volumes-and-mongodb-9ac284c25b39
 alias mongo="sudo docker run --name mongodb -v /data/mongodb -d -p 27017:27017 mongo; dc start mongodb"
 alias redis="sudo docker run --name redisdb -v /data/redisdb -d -p 6379:6379 redis; dc start redisdb"
-alias nk="docker run -it -e NGROK_AUTHTOKEN=25sLr0dlbbQQ3ib4HN3E6bNaRQo_7tncJFRm2QZqZYPkmaM34 ngrok/ngrok http 3000"
 
 alias lst="lite-server"
 
@@ -151,6 +140,5 @@ alias lst="lite-server"
 alias no-internet="sudo -g no-internet"
 alias noi="sudo -g no-internet"
 
-# open spotify with no internet
-alias s="sudo -g no-internet spotify"
-alias afk="keep-presence -c -p 10 -s 30 -m both"
+alias commitlint="npx commitlint"
+alias ngrok="docker run --net=host -it -e NGROK_AUTHTOKEN=2U9TlmO81T5a1afAr0npSSYzHlL_5K5aJtj6yphzKw1YSrcJe ngrok/ngrok:latest http --host-header=rewrite 3030"

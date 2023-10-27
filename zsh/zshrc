@@ -10,6 +10,8 @@ export DOTFILES="$HOME/dotfiles"
 source $DOTFILES/zsh/plugins.zsh
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
+source ${ASDF_DIR}/plugins/ivm-node/util/ivm_environment_manager.sh
+
 
 # Vim for life
 export EDITOR=vim
@@ -45,9 +47,9 @@ bindkey -v '^?' backward-delete-char
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='code'
 else
-  export EDITOR='nvim'
+  export EDITOR='code'
 fi
 
 # Overcoming Muscle Memory
@@ -69,8 +71,6 @@ stty start undef
 stty stop undef
 setopt noflowcontrol
 
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
@@ -81,7 +81,6 @@ export ASDF_DIR="$HOME/.asdf"
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
-source ${ASDF_DIR}/plugins/ivm-node/util/ivm_environment_manager.sh
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd ivm_setup_environment
 
@@ -89,3 +88,30 @@ export TOOLVER_DP_TOKEN="<TOKEN>"
 export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export GPG_TTY=$(tty)
+export LEGO_HOME="$HOME/lego"
+export PATH="$LEGO_HOME:$PATH"
+
+RUNNING=$(ps aux | grep dockerd | grep -v grep)
+if [[ -z "$RUNNING" ]]; then
+  sudo service docker start
+fi
+
+# bun completions
+[ -s "/home/alejandro/.bun/_bun" ] && source "/home/alejandro/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/alejandro/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

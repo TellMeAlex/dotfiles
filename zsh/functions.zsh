@@ -114,6 +114,7 @@ function csa() { cp -R ~/.sapp "$@"; cd "$@" }
 function csat() { cp -R ~/.sappt "$@"; cd "$@" }
 function csat() { cp -R ~/.sappt "$@"; cd "$@" }
 function 3000() { curl http://localhost:3000/"$@"  }
+function 3030() { curl http://localhost:3030/"$@"  }
 function 3001() { curl http://localhost:3001/"$@"  }
 function 4000() { curl http://localhost:4000/"$@"  }
 function 3000i() { curl http://localhost:3000/"$@" --include  }
@@ -125,3 +126,51 @@ gccd() {
 }
 
 alias gc="gccd"
+
+function issue() {
+  local use_pr=false
+
+  # Comprobar si se proporciona el indicador -pr
+  if [[ "$1" == "-pr" ]]; then
+    use_pr=true
+    shift  # Eliminar el indicador -pr del conjunto de argumentos
+  fi
+
+  if [ $# -lt 1 ]; then
+    echo "Uso: issue [-pr] <ID1> [ID2]" >&2
+    return 1
+  fi
+
+  local ID1="$1"
+  
+  if [ "$use_pr" = true ]; then
+    local comando="gh sherpa cpr -i MYTEAM-$ID1"
+  else
+    local comando="gh sherpa cb -i MYTEAM-$ID1"
+  fi
+  
+  if [ $# -eq 2 ]; then
+    local ID2="$2"
+    
+    # Buscar una rama local que contenga el ID2 en su nombre (Seleccionamos solo la primera)
+    local matching_branch=$(git branch | grep ".*MYTEAM-$ID2.*")
+    
+    # Limpiamos espacios en blanco y los saltos de linea
+    matching_branch=$(echo "$matching_branch" | tr -d '[:space:]')
+    
+    # Limpiamos el caracter '*' al inicio de la rama que indica la rama actual en caso de que exista
+    matching_branch=$(echo "$matching_branch" | sed 's/*//g')
+    
+    if [ -n "$matching_branch" ]; then
+      comando+=" --base $matching_branch"
+    else
+      echo "No se encontró una rama local que contenga 'MYTEAM-$ID2'. No se puede realizar la acción." >&2
+      return 1
+    fi
+  fi
+
+  # Ejecutamos el comando
+  # echo "El comando que se ejecutará es: $comando"
+
+  eval "$comando"
+}

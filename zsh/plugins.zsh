@@ -64,10 +64,11 @@ SPACESHIP_PROMPT_ORDER=(
   # line_sep  # Line break
   # battery   # Battery level and status
   # vi_mode   # Vi-mode indicator
-  jobs      # Background jobs indicator
+  # jobs      # Background jobs indicator
   # exit_code # Exit code section
   char      # Prompt character
 )
+
 function random_element() {
   declare -a array=("$@")
   r=$((RANDOM % ${#array[@]}))
@@ -75,6 +76,8 @@ function random_element() {
 }
 
 SPACESHIP_CHAR_SYMBOL="$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🥳 🤩 🤯 🤠 🦸 🧙 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱 🐱‍👤 ✔) "
+SPACESHIP_CHAR_PREFIX="$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🥳 🤩 🤯 🤠 🦸 🧙 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱 🐱‍👤 ✔) "
+SPACESHIP_CHAR_SYMBOL_ROOT="⚠"
 
 # DIR
 SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
