@@ -12,7 +12,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/command-not-found
   zgen oh-my-zsh plugins/fasd
   zgen oh-my-zsh plugins/yarn
-  zgen oh-my-zsh plugins/nvm
+  zgen oh-my-zsh plugins/asdf
   zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/copyfile
   zgen oh-my-zsh plugins/copypath
@@ -57,17 +57,18 @@ SPACESHIP_PROMPT_ORDER=(
   # conda     # conda virtualenv section
   # pyenv     # Pyenv section
   # dotnet    # .NET section
-  ember     # Ember.js section
+  # ember     # Ember.js section
   # kubectl   # Kubectl context section
   # terraform # Terraform workspace section
   exec_time # Execution time
   # line_sep  # Line break
   # battery   # Battery level and status
   # vi_mode   # Vi-mode indicator
-  jobs      # Background jobs indicator
+  # jobs      # Background jobs indicator
   # exit_code # Exit code section
   char      # Prompt character
 )
+
 function random_element() {
   declare -a array=("$@")
   r=$((RANDOM % ${#array[@]}))
@@ -75,6 +76,8 @@ function random_element() {
 }
 
 SPACESHIP_CHAR_SYMBOL="$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🥳 🤩 🤯 🤠 🦸 🧙 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱 🐱‍👤 ✔) "
+SPACESHIP_CHAR_PREFIX="$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🥳 🤩 🤯 🤠 🦸 🧙 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱 🐱‍👤 ✔) "
+SPACESHIP_CHAR_SYMBOL_ROOT="⚠"
 
 # DIR
 SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section

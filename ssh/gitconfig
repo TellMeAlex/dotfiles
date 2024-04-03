@@ -1,10 +1,18 @@
 [user]
 	name = Alejandro de la Fuente de la Rosa
-	email = alejandro.delafuentedelarosa@everis.nttdata.com
+	email = alejandrodlfdlr@ext.inditex.com
+	signingkey = 3A1A6A3405D97B66
+[commit]
+	gpgsign = true
 [includeIf "gitdir:~/work/"]
     path = ~/work/.gitconfig
+[gpg]
+	program = /mnt/c/Users/adelafde/AppData/Local/Programs/GnuPG/bin/gpg.exe
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

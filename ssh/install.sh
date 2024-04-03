@@ -1,7 +1,6 @@
 #!/bin/bash
 
-personal_email="llamamealex@gmail.com"
-work_email="alejandro.delafuente@petroprix.com"
+work_email="alejandrodlfdlr@ext.inditex.com"
 
 # shellcheck source=distro.sh
 . ../distro.sh
@@ -16,9 +15,7 @@ cd ${HOME}/.ssh
 # How to Setup SSH Keys on GitHub
 # https://devconnected.com/how-to-setup-ssh-keys-on-github/
 echo_info "Generating an RSA token for GitHub"
-echo_info "Personal - id_rsa_personal"
 echo_info "Work - id_rsa_work"
-ssh-keygen -t rsa -b 4096 -C ${personal_email}
 ssh-keygen -t rsa -b 4096 -C ${work_email}
 
 echo_info "Symlink config..."

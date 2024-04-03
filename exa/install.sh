@@ -7,10 +7,7 @@
 
 echo_info "Configuring exa..."
 
-echo_info "Installing cargo..."
-sudo apt install cargo
-
 echo_info "Installing exa..."
-cargo install exa
+sudo apt install exa
 
 echo_done "exa configuration!"
