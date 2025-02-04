@@ -1,11 +1,5 @@
 # FUNCTIONS
 
-function backup() {
-  git add --all
-  git commit -am ':wrench: [WIP] Done for today, cya tomorrow [ci skip] :wave:'
-  git push $@
-}
-
 function git-ignore() {
   curl -L -s https://www.gitignore.io/api/$@ | xclip -sel clip
 }
@@ -87,7 +81,6 @@ lfcd() {
 
 bindkey -s '^o' 'lfcd\n'
 
-shorten() { node ~/code/pika.im/node_modules/.bin/netlify-shortener "$1" "$2"; }
 killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9; }
 
 fig() { figlet "$@" | lolcat; }
@@ -129,6 +122,7 @@ alias gc="gccd"
 
 function issue() {
   local use_pr=false
+  local project_key="SXPEOPLE"
 
   # Comprobar si se proporciona el indicador -pr
   if [[ "$1" == "-pr" ]]; then
@@ -144,16 +138,16 @@ function issue() {
   local ID1="$1"
   
   if [ "$use_pr" = true ]; then
-    local comando="gh sherpa cpr -i MYTEAM-$ID1"
+    local comando="gh sherpa cpr -i $project_key-$ID1"
   else
-    local comando="gh sherpa cb -i MYTEAM-$ID1"
+    local comando="gh sherpa cb -i $project_key-$ID1"
   fi
   
   if [ $# -eq 2 ]; then
     local ID2="$2"
     
     # Buscar una rama local que contenga el ID2 en su nombre (Seleccionamos solo la primera)
-    local matching_branch=$(git branch | grep ".*MYTEAM-$ID2.*")
+    local matching_branch=$(git branch | grep ".*$project_key-$ID2.*")
     
     # Limpiamos espacios en blanco y los saltos de linea
     matching_branch=$(echo "$matching_branch" | tr -d '[:space:]')
@@ -164,7 +158,7 @@ function issue() {
     if [ -n "$matching_branch" ]; then
       comando+=" --base $matching_branch"
     else
-      echo "No se encontró una rama local que contenga 'MYTEAM-$ID2'. No se puede realizar la acción." >&2
+      echo "No se encontró una rama local que contenga '$project_key-$ID2'. No se puede realizar la acción." >&2
       return 1
     fi
   fi

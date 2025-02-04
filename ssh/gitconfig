@@ -16,3 +16,5 @@
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[http]
+	sslcainfo = /home/alejandro/ca_certs/all.pem
