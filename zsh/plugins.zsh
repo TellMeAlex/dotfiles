@@ -15,6 +15,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/asdf
   zgen oh-my-zsh plugins/npm
   zgen oh-my-zsh plugins/copyfile
+  zgen oh-my-zsh plugins/jira
   zgen oh-my-zsh plugins/copypath
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
@@ -75,7 +76,7 @@ function random_element() {
   printf "%s\n" "${array[$r]}"
 }
 
-SPACESHIP_CHAR_SYMBOL="$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🥳 🤩 🤯 🤠 🦸 🧙 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱 🐱‍👤 ✔) "
+# SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_PREFIX="$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🥳 🤩 🤯 🤠 🦸 🧙 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱 🐱‍👤 ✔) "
 SPACESHIP_CHAR_SYMBOL_ROOT="⚠"
 
