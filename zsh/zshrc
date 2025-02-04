@@ -10,6 +10,7 @@ export DOTFILES="$HOME/dotfiles"
 source $DOTFILES/zsh/plugins.zsh
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
+# source $DOTFILES/zsh/tokens.zsh
 source ${ASDF_DIR}/plugins/ivm-node/util/ivm_environment_manager.sh
 
 
@@ -47,9 +48,9 @@ bindkey -v '^?' backward-delete-char
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='code'
+  export EDITOR='vim'
 else
-  export EDITOR='code'
+  export EDITOR='nvim'
 fi
 
 # Overcoming Muscle Memory
@@ -72,9 +73,9 @@ stty stop undef
 setopt noflowcontrol
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 export ASDF_DIR="$HOME/.asdf"
 # append completions to fpath
@@ -84,29 +85,22 @@ autoload -Uz compinit && compinit
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd ivm_setup_environment
 
-export TOOLVER_DP_TOKEN=""
-# export PATH="$(yarn global bin):$PATH"
-# export PATH="$HOME/.cargo/bin:$PATH"
+export NODE_EXTRA_CA_CERTS="$HOME/all.pem"
+export SSL_CERT_FILE="$HOME/all.pem"
+export CURL_CA_BUNDLE="$HOME/all.pem"
+export GIT_SSL_CAINFO="$HOME/all.pem"
+export AWS_CA_BUNDLE="$HOME/all.pem"
 
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export GPG_TTY=$(tty)
-export LEGO_HOME="$HOME/lego"
-export PATH="$LEGO_HOME:$PATH"
 
 # RUNNING=$(ps aux | grep dockerd | grep -v grep)
 # if [[ -z "$RUNNING" ]]; then
 #   sudo service docker start
 # fi
-
-# bun completions
-# [ -s "/home/alejandro/.bun/_bun" ] && source "/home/alejandro/.bun/_bun"
-
-# bun
-# export BUN_INSTALL="$HOME/.bun"
-# export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/alejandro/.local/share/pnpm"
@@ -115,3 +109,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH=$PATH:/home/alejandro/.local/bin
