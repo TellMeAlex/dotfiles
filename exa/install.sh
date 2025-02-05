@@ -8,6 +8,6 @@
 echo_info "Configuring exa..."
 
 echo_info "Installing exa..."
-sudo apt install exa
+sudo apt install eza
 
 echo_done "exa configuration!"
